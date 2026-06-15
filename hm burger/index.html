@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HM Burger - Best Burgers in Town</title>
+    <!-- Google Font link clean typography ke liye -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS STYLES START HERE --- */
+        
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #000000; /* Dark Black Background */
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Header / Navbar Styling */
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 25px 0 15px 0;
+            background-color: #000000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Custom SVG Red Logo design similar to the screenshot */
+        .logo-icon-svg {
+            width: 45px;
+            height: 45px;
+            margin-bottom: 5px;
+        }
+
+        .logo-text {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #aaaaaa;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover, 
+        .nav-links a.active {
+            color: #ffffff;
+        }
+
+        /* Hero Section Styling */
+        .hero-section {
+            min-height: calc(100vh - 140px);
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            position: relative;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.10fr 0.90fr;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        /* Left Content Details */
+        .hero-content {
+            padding-right: 30px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-content p {
+            font-size: 0.95rem;
+            color: #cccccc;
+            line-height: 1.6;
+            margin-bottom: 35px;
+            font-weight: 300;
+            max-width: 520px;
+        }
+
+        /* Button Styling */
+        .cta-btn {
+            display: inline-block;
+            background-color: #e52e2e; /* Exact bright red from screenshot */
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 28px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 4px;
+            text-transform: lowercase; /* Matching the lowercase layout */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #cc2424;
+            transform: translateY(-2px);
+        }
+
+        /* Right Image Details */
+        .hero-image {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 100%;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Responsive Design for Mobile/Tablets */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 10px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 30px;
+                padding-bottom: 50px;
+            }
+
+            .hero-content {
+                padding-right: 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content p {
+                margin: 0 auto 30px auto;
+            }
+
+            .hero-image {
+                justify-content: center;
+                order: -1; /* Image mobile par text se upar dikhegi */
+            }
+            
+            .hero-image img {
+                max-width: 85%;
+            }
+        }
+        
+        /* --- CSS STYLES END HERE --- */
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar Section -->
+    <header class="navbar">
+        <div class="logo-container">
+            <!-- Burger Icon SVG directly embedded to match the red outline style -->
+            <svg class="logo-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 11C3 7.13401 6.13401 4 10 4H14C17.866 4 21 7.13401 21 11V12H3V11Z" stroke="#e52e2e" stroke-width="2" stroke-linecap="round"/>
+                <path d="M3 15H21" stroke="#e52e2e" stroke-width="2" stroke-linecap="round"/>
+                <path d="M5 15C5 17.7614 7.23858 20 10 20H14C16.7614 20 19 17.7614 19 15V15H5V15Z" stroke="#e52e2e" stroke-width="2" stroke-linecap="round"/>
+                <path d="M7 12L9 15" stroke="#e52e2e" stroke-width="1.5"/>
+                <path d="M12 12L13 15" stroke="#e52e2e" stroke-width="1.5"/>
+                <path d="M17 12L15 15" stroke="#e52e2e" stroke-width="1.5"/>
+            </svg>
+            <div class="logo-text">HM Burger</div>
+        </div>
+        <nav class="nav-links">
+            <a href="#home" class="active">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#menu">MENU</a>
+            <a href="#gallery">GALLERY</a>
+            <a href="#reviews">REVIEWS</a>
+            <a href="#contact">CONTACT US</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-container">
+            
+            <!-- Left Side Content -->
+            <div class="hero-content">
+                <h1>Best Burgers in town</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati eveniet harum suscipit sint ducimus cum modi dolorem id praesentium quam porro tenetur et aspernatur a aperiam magnam, ex architecto numquam.</p>
+                <a href="#menu" class="cta-btn">check out menu</a>
+            </div>
+            
+            <!-- Right Side Image -->
+            <div class="hero-image">
+                <!-- Referencing your image verbatim -->
+<img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?q=80&w=800&auto=format&fit=crop" alt="Premium Delicious Burger">
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

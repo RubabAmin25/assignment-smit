@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnePage - Bootstrap Website Template</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS STYLES START --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body {
+            background-color: #f8fbfe; /* Light clean blueish-white background jaisa screenshot me hai */
+            color: #444444;
+            overflow-x: hidden;
+        }
+
+        /* Header / Navbar Section */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: #ffffff;
+            box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            color: #124265; /* Dark Navy Blue color from image */
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c4964;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links .active {
+            color: #2487ce; /* Bright blue color */
+        }
+
+        /* Buttons Styling (Header & Hero dono ke liye) */
+        .btn-blue {
+            background-color: #2487ce;
+            color: #ffffff;
+            padding: 8px 22px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .btn-blue:hover {
+            background-color: #1b6fa7;
+        }
+
+        /* Hero / Main Section */
+        .hero-section {
+            padding: 160px 8% 80px 8%;
+            text-align: center;
+            background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(244,249,253,1) 100%);
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-container h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #124265;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero-container p {
+            font-size: 1.2rem;
+            color: #5e5e5e;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .hero-container .btn-blue {
+            padding: 12px 35px;
+            font-size: 16px;
+        }
+
+        /* 4 Cards Section Grid Layout */
+        .cards-section {
+            max-width: 1200px;
+            margin: -20px auto 60px auto;
+            padding: 0 4%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: left;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 30px rgba(36, 135, 206, 0.15);
+        }
+
+        /* Simulating the minimal icons from screenshot using text/emojis or simple CSS */
+        .card-icon {
+            font-size: 32px;
+            color: #2487ce;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            color: #124265;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #777777;
+            line-height: 1.6;
+        }
+
+        /* Mobile aur Tablet layout responsive karne ke liye */
+        @media (max-width: 992px) {
+            .cards-section {
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: 40px;
+            }
+            .hero-container h1 {
+                font-size: 2.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 5%;
+            }
+            .nav-links {
+                display: none; /* Mobile navigation toggle production me handle hota hai */
+            }
+            .cards-section {
+                grid-template-columns: 1fr;
+            }
+            .hero-section {
+                padding-top: 120px;
+            }
+        }
+        /* --- CSS STYLES END --- */
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">OnePage</a>
+        
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Dropdown ▾</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <a href="#" class="btn-blue">Get Started</a>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-container">
+            <h1>One Page Bootstrap Website Template</h1>
+            <p>We are team of talented designers making websites with Bootstrap</p>
+            <a href="#" class="btn-blue">Get Started</a>
+        </div>
+    </section>
+
+    <section class="cards-section">
+        
+        <div class="card">
+            <div class="card-icon">📋</div> <h3>Lorem Ipsum</h3>
+            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">💎</div> <h3>Sed ut perspiciatis</h3>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">📍</div> <h3>Magni Dolores</h3>
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">⌘</div> <h3>Nemo Enim</h3>
+            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+        </div>
+
+    </section>
+
+</body>
+</html>
